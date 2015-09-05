@@ -12,6 +12,10 @@ class window.Card extends Backbone.Model
         else params.rank
 
   flip: ->
-    @set 'revealed', !@get 'revealed'
+    @set 'revealed', !@get 'revealed' ## (this['revealed'] = !this['revealed']), when dealer gets this.pop().flip
     @
 
+## set revealed to the opposite of what revealed is right now
+## before first flip, revealed = true;
+## after first flip, revealed = opposite of revealed --> false;
+## second flip, revealed = opposite of revealed --> true;
